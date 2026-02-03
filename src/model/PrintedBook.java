@@ -1,16 +1,18 @@
 package model;
 
-public class PrintedBook extends Book {
+public class PrintedBook extends BaseEntity {
 
     public PrintedBook(int id, String name, Author author) {
-        super(id, name, author);
+        super(id, name);
     }
 
+    @Override
     public String getType() {
-        return "PrintedBook";
+        return "PRINTED";
     }
 
-    public double getMonthlyCost() {
-        return 2.5;
+    @Override
+    public String getDescription() {
+        return "Physical book";
     }
 }

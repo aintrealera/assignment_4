@@ -1,9 +1,8 @@
 package model;
 
 public abstract class BaseEntity {
-
-    protected int id;
-    protected String name;
+    private int id;
+    private String name;
 
     public BaseEntity(int id, String name) {
         this.id = id;
@@ -11,18 +10,12 @@ public abstract class BaseEntity {
     }
 
     public abstract String getType();
+    public abstract String getDescription();
 
-    public abstract double getMonthlyCost();
-
-    public String info() {
-        return id + ": " + name + " (" + getType() + ")";
+    public String display() {
+        return id + ": " + name;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
+    public int getId() { return id; }
+    public String getName() { return name; }
 }

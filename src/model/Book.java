@@ -1,11 +1,20 @@
 package model;
 
-public abstract class Book extends BaseEntity {
+public class Book extends BaseEntity {
+    private Category category;
 
-    protected Author author;
-
-    public Book(int id, String name, Author author) {
+    public Book(int id, String name, Category category) {
         super(id, name);
-        this.author = author;
+        this.category = category;
+    }
+
+    @Override
+    public String getType() {
+        return "BOOK";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Book in category " + category.getName();
     }
 }
